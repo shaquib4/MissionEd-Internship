@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1003972877483",
+    "firebase_url": "https://missionednew-default-rtdb.firebaseio.com",
+    "project_id": "missionednew",
+    "storage_bucket": "missionednew.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1003972877483:android:6add8419f5ffb6929aabee",
+        "android_client_info": {
+          "package_name": "com.android.mission_ed_internship"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1003972877483-s4pl7kqhm6vslce3h10dhs4drbr0ctv7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.android.mission_ed_internship",
+            "certificate_hash": "7c8537dcefe92492f9b46905ab9ad0d3b376e6b3"
+          }
+        },
+        {
+          "client_id": "1003972877483-u0iq9m3c8vp4efst2sfsnelga7ek37bp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdh4eVxYW8T_bd2staQjWb1234QVQ1bSA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1003972877483-u0iq9m3c8vp4efst2sfsnelga7ek37bp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
