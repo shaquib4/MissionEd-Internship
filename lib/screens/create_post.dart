@@ -148,7 +148,7 @@ class _CreatePostState extends State<CreatePost> {
           'category': _dropDownValue,
           'postedBy': user.uid.toString(),
           'imgUrl': user.photoURL == null ? "" : user.photoURL,
-          'imgPostUrl': "https://i.pinimg.com/564x/7a/9a/41/7a9a417cb1312623abff4921e2f364f9.jpg",
+          'imgPostUrl': "https://www.kindpng.com/picc/m/117-1173144_think-tech-illustration-hd-png-download.png",
           'likes': "0",
           'username': username
         });
