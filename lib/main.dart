@@ -4,7 +4,6 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:mission_ed/authenticate/authenticate_firebase.dart';
 import 'package:mission_ed/components/constants.dart';
 import 'package:mission_ed/screens/home_screen.dart';
-import 'package:mission_ed/screens/notifications.dart';
 import 'package:mission_ed/screens/splash.dart';
 import 'package:provider/provider.dart';
 import 'screens/description_screen.dart';
@@ -107,7 +106,7 @@ class _MyAppState extends State<MyApp> {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          primarySwatch: Colors.deepPurple,
+          primarySwatch: Colors.blue,
         ),
         home: SplashScreen(),
       ),

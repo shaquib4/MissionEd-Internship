@@ -8,7 +8,7 @@ import 'package:mission_ed/screens/forget_password.dart';
 import 'package:mission_ed/screens/home_screen.dart';
 import 'package:mission_ed/components/rounded_button.dart';
 import 'package:mission_ed/components/constants.dart';
-import 'package:mission_ed/components/signUP_screen.dart';
+import 'package:mission_ed/screens/signUP_screen.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:provider/provider.dart';
 import '../authenticate/google_sign_in.dart';
@@ -40,6 +40,7 @@ class _LoginScreenState extends State<LoginScreen> {
   }
   @override
   Widget build(BuildContext context) {
+    final user = FirebaseAuth.instance.currentUser;
     return Scaffold(
       backgroundColor: Color(0xfffcfcfc),
       body: StreamBuilder(
@@ -49,8 +50,7 @@ class _LoginScreenState extends State<LoginScreen> {
             return Center(
               child: CircularProgressIndicator(),
             );
-          } else if (snapshot.hasData) {
-            final user = FirebaseAuth.instance.currentUser;
+          } else if (snapshot.hasData&&user.displayName!=null) {
             /*final token = SendNotification().getToken();*/
             /*print('This is $token');*/
             final databaseRef = FirebaseDatabase.instance
@@ -62,8 +62,8 @@ class _LoginScreenState extends State<LoginScreen> {
               'username': user.displayName,
               'email': user.email,
               'imgUrl': user.photoURL==null?"":user.photoURL,
-              'token': "token"
             });
+            print('This runs');
             return AuthenticateFirebase();
           } else if (snapshot.hasError) {
             return Center(
@@ -85,7 +85,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           Text(
-                            ' Welcome !',
+                            ' Welcome To MissionEd!',
                             style: TextStyle(
                                 color: kPrimaryColor,
                                 fontSize: 24.0,
@@ -146,9 +146,6 @@ class _LoginScreenState extends State<LoginScreen> {
                                         .reference()
                                         .child('Users')
                                         .child(user.uid);
-                                    final token =
-                                    await SendNotification().getToken();
-                                    ref.update({'token': token});
                                     Navigator.push(
                                         context,
                                         MaterialPageRoute(
@@ -181,7 +178,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               ' Forget your password ?',
                               style: TextStyle(
                                 color: kSecondaryColor,
-                                fontSize: 14.0,
+                                fontSize: 16.0,
                               ),
                               textAlign: TextAlign.start,
                             ),

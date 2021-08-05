@@ -86,7 +86,7 @@ class _CreatePostState extends State<CreatePost> {
         Navigator.push(
             context,
             MaterialPageRoute(
-                builder: (context) => HomeScreen()));
+                builder: (context) => AuthenticateFirebase()));
         setState(() {
           showSpinner = false;
         });

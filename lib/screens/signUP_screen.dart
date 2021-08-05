@@ -59,7 +59,7 @@ class _SignUpState extends State<SignUp> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Text(
-                      ' Welcome !',
+                      ' Welcome To MissionEd!',
                       style: TextStyle(
                           color: kPrimaryColor,
                           fontSize: 24.0,
@@ -142,10 +142,11 @@ class _SignUpState extends State<SignUp> {
                             setState(() {
                               isLoading = true;
                             });
-                            token = await SendNotification().getToken();
-                            createAccount(username, email, password, token)
+                            print(username);
+                            createAccount(username, email, password)
                                 .then((user) {
                               if (user != null) {
+                                print(user);
                                 subscribeToMissionEd();
                                 Navigator.push(
                                     context,
@@ -221,21 +222,6 @@ class _SignUpState extends State<SignUp> {
                 SizedBox(
                   height: 8,
                 ),
-                Text(
-                  'OR',
-                  style: TextStyle(
-                      color: Color(0xffeaeaea),
-                      fontSize: 18.0,
-                      fontWeight: FontWeight.bold),
-                  textAlign: TextAlign.center,
-                ),
-                SizedBox(
-                  height: 5,
-                ),
-                Container(height: 42, child: Image.asset('images/goog.png')),
-                SizedBox(
-                  height: 20,
-                )
               ],
             ),
           ),
